@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="10dp"
+    android:background="?attr/colorPrimary">
+
+    <ImageView
+        android:id="@+id/icon_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1490237067@qq.com"
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/email"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HCLOO"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:id="@+id/iv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+</RelativeLayout>

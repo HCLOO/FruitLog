@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.think.fruitlog">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    //这个权限用于访问GPS定位
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/fruit_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="0NGy36vAGqV6a9GXOm5LYorN3KtpP3uC" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".activtiy.BuyActivity"
+            android:label="购果车" />
+        <activity android:name=".activtiy.FruitData_Activity" />
+        <activity
+            android:name=".activtiy.LogTagActivity"
+            android:label="日志标签"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".activtiy.PraiseActivity" />
+        <activity
+            android:name=".activtiy.PraiseLogActivity"
+            android:label="点评记录" />
+        <activity
+            android:name=".activtiy.MainActivity"
+            android:label="水果汇" />
+        <activity android:name=".activtiy.GoToBuyActivity" />
+        <activity
+            android:name=".activtiy.BuyLogActivity"
+            android:label="购买记录" />
+        <activity android:name=".activtiy.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activtiy.LoginAndSignUpActivity" />
+        <activity
+            android:name=".activtiy.NewsActivity"
+            android:label="新闻资讯" />
+        <activity android:name=".activtiy.WebShowActivity" />
+        <activity android:name=".activtiy.DaiduMapActivity" />
+        <activity android:name=".activtiy.CommentActivity" />
+        <activity android:name=".activtiy.FruitMomentsActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activtiy.CommentActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_log_tag"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:id="@+id/ll_part1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_log_tag"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="当前城市"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            android:layout_marginLeft="20dp"/>
+
+        <EditText
+            android:id="@+id/et_ctiy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:maxLines="1"
+            android:background="@drawable/content_et_shape"
+            android:textCursorDrawable="@drawable/cusor_shape"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_part2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_part1"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/content_et_shape"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/sug_search"/>
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textCursorDrawable="@drawable/cusor_shape"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"/>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/submit_btn_shape"
+            android:text="取消"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_part3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_part2"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/sug_location"/>
+
+        <TextView
+            android:id="@+id/tv_location_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:layout_gravity="center_vertical"
+            android:text="地址"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_sug_show"
+        android:layout_below="@+id/ll_part2"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_part4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_part3"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/edit_log_content"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:layout_gravity="center_vertical"
+            android:text="评论"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_part5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/ll_part4"
+        android:layout_above="@+id/btn_submit"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:background="@drawable/content_et_shape"
+            android:textCursorDrawable="@drawable/cusor_shape"
+            android:gravity="start|top"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/submit_btn_shape"
+        android:text="提交"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+</RelativeLayout>

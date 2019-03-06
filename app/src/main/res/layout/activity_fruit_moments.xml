@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.think.fruitlog.activtiy.FruitMomentsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_fruitmoments"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+    <LinearLayout
+        android:id="@+id/ll_city_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_fruitmoments"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="选择城市"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            android:layout_marginLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/et_ctiy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:maxLines="1"
+            android:background="@drawable/content_et_shape"
+            android:textCursorDrawable="@drawable/cusor_shape"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/submit_btn_shape"
+            android:text="搜索"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_fruitmoments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_city_select"
+        android:layout_margin="8dp"/>
+</RelativeLayout>

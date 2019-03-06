@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 26
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.example.think.fruitlog"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    greendao {
+        schemaVersion 1  //版本
+        daoPackage 'dao' // 一般为app包名+生成文件的文件夹名
+        targetGenDir 'src/main/java' //生成文件路径
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    //以下SDK开发者请根据需要自行选择
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    //3.5.5：请务必查看下面注释[1]
+    implementation 'cn.bmob.android:bmob-sdk:3.5.3'
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    implementation 'cn.bmob.android:http-legacy:1.0'
+    //retrofit
+    implementation('com.squareup.retrofit2:retrofit:2.1.0') {
+        exclude group: 'com.squareup.okhttp3'
+    }
+    //rxjava
+    //implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
+    //rxandroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //配合Rxjava 使用
+    implementation('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
+        exclude group: 'io.reactivex'
+        exclude group: 'com.squareup.okhttp3'
+    }
+    //转换器 将结果通过gson将json串转换为model
+    implementation('com.squareup.retrofit2:converter-gson:2.1.0') {
+        exclude group: 'com.google.code.gson'
+        exclude group: 'com.squareup.okhttp3'
+    }
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/BaiduLBS_Android.jar')
+}
