@@ -1,2 +1,2 @@
 # FruitLog
-基于Material Design理念，设计并实现酷炫动画效果的一款水果汇软件（个人项目）
+基于material design理念的炫酷水果综合软件（个人项目）
